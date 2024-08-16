@@ -8,7 +8,6 @@ app.use(express.json())
 serverStart()
 
 app.post('/', async (req, res) => {
-    console.log('aaaaaaa')
     const user = await User.create(req.body)
     res.json(user)
 })

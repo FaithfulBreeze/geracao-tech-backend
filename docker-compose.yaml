@@ -13,6 +13,8 @@ services:
   
   api:
     build: ./
+    depends_on:
+      - database
     container_name: api
     ports:
      - 80:80
