@@ -1,0 +1,21 @@
+services:
+  database:
+    image: mysql
+    container_name: database
+    environment:
+      MYSQL_ROOT_PASSWORD: 0000
+      MYSQL_USER: mysql_user
+      MYSQL_DATABASE: ecommerce
+    volumes:
+      - ./mysql_data:/var/lib/mysql
+    ports:
+      - 3306:3306
+  
+  api:
+    build: ./
+    container_name: api
+    ports:
+     - 80:80
+    volumes: 
+     - .:/app
+    
