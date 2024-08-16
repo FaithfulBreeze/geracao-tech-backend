@@ -1,8 +1,16 @@
-const express = require('express')
-const app = express()
+import express from 'express'
+import { serverStart } from './services/serverStart.js'
+import { userRouter } from './routes/userRoutes.js'
+import { User } from './models/User.js'
 
-app.get('/', (req, res) => {
-    res.json({message: "Olá mundo!"})
+export const app = express()
+app.use(express.json())
+serverStart()
+
+app.post('/', async (req, res) => {
+    console.log('aaaaaaa')
+    const user = await User.create(req.body)
+    res.json(user)
 })
 
-app.listen(80)
+app.use('/v1', userRouter)
