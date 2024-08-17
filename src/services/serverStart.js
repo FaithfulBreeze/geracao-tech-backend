@@ -8,9 +8,9 @@ export async function serverStart(){
     try {
         setTimeout( async () => {
             await sequelize.sync(syncConfig)
-            app.listen(80, () => console.log('Server running on port 80.\n'))
+            app.listen(80, () => console.log('Server running on port 80.'))
         }, 5000)
     } catch (error) {
-        console.log('Could not start the server... \n', error)
+        console.log('Could not start the server...', error)
     }
 }
