@@ -3,7 +3,7 @@ import { createController, readController, updateController, deleteController } 
 
 export const userRouter = Router()
 
-userRouter.post('/user', createController)
-userRouter.get('/user/:id', readController)
-userRouter.put('/user/:id', updateController)
-userRouter.delete('/user/:id', deleteController)
+userRouter.post('/', createController)
+userRouter.get('/:id', readController)
+userRouter.put('/:id', updateController)
+userRouter.delete('/:id', deleteController)

@@ -1,15 +1,15 @@
 import express from 'express'
 import { serverStart } from './services/serverStart.js'
+import config from './config/dotenvConfig.js'
+
 import { userRouter } from './routes/userRoutes.js'
-import { User } from './models/User.js'
+import { categoryRouter } from './routes/categoryRoutes.js'
 
 export const app = express()
-app.use(express.json())
+
 serverStart()
 
-app.post('/', async (req, res) => {
-    const user = await User.create(req.body)
-    res.json(user)
-})
+app.use(express.json())
 
-app.use('/v1', userRouter)
+app.use('/v1/user', userRouter)
+app.use('/v1/category', categoryRouter)

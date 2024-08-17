@@ -32,7 +32,7 @@ export const updateController = async (req, res) => {
         const { body } = req
         if(Object.keys(body).length == 0) return res.status(400).json({ message: "No body content."} )
         const user = await User.update(body, { where: {id} })
-        if(!user) return res.status(404).json({ message: "User not found." })
+        if(user[0] == 0) return res.status(404).json({ message: "User not found." })
         res.status(204).end()
     } catch (error) {
         res.status(400).json(error)
