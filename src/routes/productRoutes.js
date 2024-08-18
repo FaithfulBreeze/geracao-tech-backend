@@ -4,7 +4,7 @@ import { createController, readController, updateController, deleteController } 
 export const productRouter = Router()
 
 productRouter.post('/', createController)
-productRouter.get('/', readController)
+productRouter.get('/search', readController)
 productRouter.get('/', readController)
 productRouter.put('/', updateController)
 productRouter.delete('/', deleteController)
