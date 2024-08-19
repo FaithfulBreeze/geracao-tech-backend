@@ -1,9 +1,10 @@
 services:
+
   api:
     build: ./
-    depends_on:
-      - database
     container_name: api
+    networks:
+      - backend-network
     ports:
      - 80:80
     volumes: 
@@ -12,6 +13,9 @@ services:
   database:
     image: mysql
     container_name: database
+    networks:
+      - backend-network
+    attach: false
     environment:
       MYSQL_ROOT_PASSWORD: mysql
       MYSQL_USER: mysql
@@ -20,3 +24,7 @@ services:
       - ./mysql_data:/var/lib/mysql
     ports:
       - 3306:3306
+
+networks:
+  backend-network:
+    driver: bridge

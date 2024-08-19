@@ -39,7 +39,7 @@ Product.init(
         price_with_discount: {
             type: DataTypes.FLOAT(5, 2),
             allowNull: false
-        }
+        },
     },
     {
         sequelize,

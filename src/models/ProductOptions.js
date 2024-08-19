@@ -24,7 +24,8 @@ ProductOptions.init(
         },
         radius:{
             type: DataTypes.INTEGER,
-            defaultValue: 0
+            defaultValue: 0,
+            allowNull: true
         },
         type:{
             type: DataTypes.ENUM('text', 'color'),

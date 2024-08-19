@@ -12,14 +12,19 @@ ProductCategory.init(
             references:{
                 model: Product,
                 key: 'id'
-            }
+            },
+            onDelete: 'CASCADE',
+            onUpdate: 'CASCADE'
         },
         category_id:{
             type: DataTypes.INTEGER,
             references:{
                 model: Category,
-                key: 'id'
-            }
+                key: 'id',
+                
+            },
+            onDelete: 'CASCADE',
+            onUpdate: 'CASCADE'
         }
     },
     {

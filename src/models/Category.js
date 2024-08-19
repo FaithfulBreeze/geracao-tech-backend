@@ -17,7 +17,7 @@ Category.init(
             type: DataTypes.BOOLEAN,
             allowNull: true,
             defaultValue: 0
-        },
+        }
     },
     {
         sequelize,

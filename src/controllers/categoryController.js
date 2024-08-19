@@ -19,7 +19,7 @@ export const readController = async (req, res) => {
         if(use_in_menu == 'true') shouldSetWhere = 'where'
         try {
             const data = await Category.findAndCountAll({
-                limit: +limit == false ? 12 : +limit,
+                limit: +limit == false ? 12 : limit < 0 ? null : +limit,
                 [shouldSetPage]: (+limit||1)*(+page-1),
                 attributes: fields ? fields.split(',') : ['id', 'name', 'slug', 'use_in_menu'],
                 [shouldSetWhere]: { use_in_menu: true }
