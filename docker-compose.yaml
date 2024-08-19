@@ -7,8 +7,6 @@ services:
       - backend-network
     ports:
      - 80:80
-    volumes: 
-     - .:/app
     
   database:
     image: mysql
