@@ -1,8 +1,12 @@
 import { User } from '../models/User.js'
+import bcript from 'bcrypt'
 
 export const createController = async (req, res) => {
     const { body } = req
+    
     if(body.password == body.confirmPassword){
+        body.password = bcript.hashSync(body.password, 10)
+        console.log(body)
         delete body.confirmPassword
         try {
             const user = await User.create(body)

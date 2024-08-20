@@ -8,4 +8,4 @@ RUN npm i
 
 EXPOSE 80
 
-CMD ["npm", "start"]
+CMD ["npm", "test"]
