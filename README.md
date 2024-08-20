@@ -380,7 +380,7 @@ Projeto back-end do curso Desenvolvedor Web Fullstack
 </details>
 
 <details>
-  <summary><strong>Requisito 03 - Criar endpoint de criação de produto</strong></summary><br>
+  <summary><strong>Criar produto</strong></summary><br>
 
 - POST /v1/product
 
